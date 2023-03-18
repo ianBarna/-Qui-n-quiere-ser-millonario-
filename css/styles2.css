@@ -1,0 +1,50 @@
+body{
+    background-image: url("https://assets.justenergy.com/wp-content/uploads/2020/12/how-electrcity-works-ball-of-electric-image.jpg");
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+    color:antiquewhite; 
+    margin-top: 60px;
+}
+
+.preguntas{
+    background-color:lemonchiffon;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.preguntas > p{
+    font-size: 30px;
+    text-align:center;
+    color:black;
+}
+
+h3{
+    text-align: center;
+    color:antiquewhite; 
+}
+
+p{
+    text-align:center;
+    color:antiquewhite; 
+    font-size: 30px;
+}
+
+.respuestas{
+    text-align: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 20px 50px 20px 50px;
+    font-size: 18px;
+}
+.temporizer{
+    text-align: center;
+    color:antiquewhite;
+    margin-top: 100px;
+}
