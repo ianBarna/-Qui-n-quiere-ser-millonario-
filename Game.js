@@ -10,7 +10,7 @@ class game {
         this.question = document.querySelector(".preguntas");
      }
      addNewOptions() {
-        this.option = document.querySelector(".respuesta")
+        this.option = document.querySelector(".respuestas")
      }
      
     
