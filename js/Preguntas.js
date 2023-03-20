@@ -15,7 +15,7 @@ let questions = [
      answer: 0
     },
     {
-     question: "¿Cual es el simbolo qumico del hierro?",
+     question: "¿Cual es el simbolo quimico del hierro?",
      options: ["Pb", "Sn", "Fe", "Co"],
      answer: 2
     },
