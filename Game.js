@@ -3,6 +3,7 @@ class game {
     constructor(questionArray) {
         this.questions = questionArray;
         this.counter = 0;
+        this.money = 0
         this.initGame()
      }
      initGame() {
@@ -33,12 +34,20 @@ class game {
         if (checkNumber === answer) {
             this.counter++;
             this.loadQuestions();
-
+            this.moneyIncrement();
+            console.log(this.money)
         } else {
             console.log("error")
         }
 
      }
+
+     moneyIncrement() {
+        this.money += this.questions[this.counter].value
+        let wallet = document.querySelector("#money")
+        wallet.innerHTML = this.money;
+     }
+    
     
 }
 
