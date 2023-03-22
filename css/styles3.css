@@ -1,0 +1,29 @@
+#body-win{
+    background-color:goldenrod
+}
+
+#body-loose{
+    background-color:grey;
+}
+
+h1 {
+    color:white;
+}
+
+h2 {
+    color: white;
+}
+
+#looser{
+    text-align:center;
+}
+
+#winner{
+    text-align:center;
+}
+
+img {
+    width: 300px;
+    height:300px;
+}
+

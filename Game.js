@@ -2,56 +2,57 @@ class game {
 
     constructor(questionArray) {
         this.questions = questionArray;
+        this.counter = 0;
+        this.money = 0;
         this.initGame()
-    }
+     }
 
-    initGame() {
+     initGame() {
+        this.loadQuestions();
+     }
 
-        let question = this.questions[0].question;
-        let options = this.questions[0].options;
-        let answer = this.questions[0].answer;
+     loadQuestions() {
 
+        let question = this.questions[this.counter].question;
+        let options = this.questions[this.counter].options;
         let quest1 = document.querySelector(".preguntas")
-        quest1.innerHTML = question
-
         let bottons = document.querySelector(".respuestas")
-
+        quest1.innerHTML = question
+        bottons.innerHTML = ""
         options.forEach((element, index) => {
 
             let crearBoton = document.createElement("button")
             bottons.appendChild(crearBoton)
             crearBoton.innerText = element
             crearBoton.setAttribute("name", index)
-            crearBoton.addEventListener('click', function () {
+            crearBoton.addEventListener('click', (event) => {
+                let selectedOption = event.currentTarget;
+                this.checkAnswer(selectedOption);
+            });
+        });
 
-        //         let checkNumber = parseInt(this.getAttribute("name"));
+     }
 
-        //         if (checkNumber === answer) {
-        //             console.log("ok")
-        //         }
-        //         else {
-        //             console.log("error")
-        //         }
-        //     });
-        // });
-    }
-//----------------------------------------------------------------------------------
-
-    checkAnswer(){
-        let checkNumber = parseInt(this.getAttribute("name"));
-        if(checkNumber !== answer || temporizer === 0){
-            console.log("Game over")
+     checkAnswer(selectedOption) {
+        let answer = this.questions[this.counter].answer;
+        let checkNumber = parseInt(selectedOption.getAttribute("name"));  
+        if (checkNumber === answer) {
+            this.counter++;
+            this.loadQuestions();
+            this.moneyIncrement();
+            console.log(this.money)
         } else {
-            console.log ("Correct!!")
-            loadNewQuestion()
+            console.log("error")
         }
-    }
+     }
 
-    loadNewQuestion(){
-        this.questions.forEach(element){}
-    }
+     moneyIncrement() {
+        this.money += this.questions[this.counter].value
+        let wallet = document.querySelector("#money")
+        wallet.innerHTML = this.money;
+     }
 }
-
+     
 
 let newGame = new game(questions);
 
