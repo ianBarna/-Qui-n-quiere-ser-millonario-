@@ -4,6 +4,8 @@ class game {
         this.questions = questionArray;
         this.counter = 0;
         this.money = 0;
+        this.time = 30;
+        this.countdown = 0
         this.initGame()
      }
 
@@ -17,8 +19,10 @@ class game {
         let options = this.questions[this.counter].options;
         let quest1 = document.querySelector(".preguntas")
         let bottons = document.querySelector(".respuestas")
+        this.temporizer();
         quest1.innerHTML = question
         bottons.innerHTML = ""
+        
         options.forEach((element, index) => {
 
             let crearBoton = document.createElement("button")
@@ -40,10 +44,10 @@ class game {
             this.counter++;
             this.loadQuestions();
             this.moneyIncrement();
-            console.log(this.money)
+            clearInterval(this.countdown)
+         
         } else {
             window.open("http://127.0.0.1:5500/millonario-game-over.html", "_self")
-            console.log("error")
         }
      }
 
@@ -52,6 +56,24 @@ class game {
         let wallet = document.querySelector("#money")
         wallet.innerHTML = this.money;
      }
+
+     temporizer(){
+
+        this.time = 30;
+        let timeDisplay = document.querySelector("#countdown")
+        console.log(timeDisplay);
+        timeDisplay.innerHTML = this.time
+
+        this.countdown = setInterval(() =>{
+        if(this.time > 0){
+            this.time--;
+            timeDisplay.innerHTML = this.time;
+            console.log(this.time);
+        }
+        },1000)
+
+    }
+
 }
      
 

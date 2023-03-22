@@ -27,3 +27,8 @@ img {
     height:300px;
 }
 
+
+#ganancia > p{
+    background-color:goldenrod;
+    color: black;
+}
