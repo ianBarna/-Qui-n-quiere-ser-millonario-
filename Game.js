@@ -42,6 +42,7 @@ class game {
             this.moneyIncrement();
             console.log(this.money)
         } else {
+            window.open("http://127.0.0.1:5500/millonario-game-over.html", "_self")
             console.log("error")
         }
      }
