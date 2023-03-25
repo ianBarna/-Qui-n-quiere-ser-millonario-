@@ -5,7 +5,7 @@ class game {
         this.counter = 0;
         this.money = 0;
         this.time = 30;
-        this.countdown = 0
+        this.countdown = 0;
         this.initGame()
      }
 
@@ -37,18 +37,28 @@ class game {
      }
 
      checkAnswer(selectedOption) {
-        let answer = this.questions[this.counter].answer;
+        let answer = this.questions[this.counter].answer
         let checkNumber = parseInt(selectedOption.getAttribute("name"));  
         if (checkNumber !== answer){
             window.open("http://127.0.0.1:5500/millonario-game-over.html", "_self")
             
         }
+        
+
         if (checkNumber === answer) {
             this.counter++;
+            if(this.counter === this.questions.length){
+                 window.open("http://127.0.0.1:5500/millonario-you-won%20.html")
+               
+                }
             this.loadQuestions();
             this.moneyIncrement();
             clearInterval(this.countdown)
-        } 
+
+        
+        }
+       
+
      }
 
      moneyIncrement() {
