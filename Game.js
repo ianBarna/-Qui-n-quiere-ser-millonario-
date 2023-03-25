@@ -27,7 +27,7 @@ class game {
 
             let crearBoton = document.createElement("button")
             bottons.appendChild(crearBoton)
-            crearBoton.innerText = el-.lkjuytrewq   >AZSfghjklotrASDFGement
+            crearBoton.innerText = element
             crearBoton.setAttribute("name", index)
             crearBoton.addEventListener('click', (event) => {
                 let selectedOption = event.currentTarget;
