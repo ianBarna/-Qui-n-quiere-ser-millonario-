@@ -22,33 +22,33 @@ class game {
         this.temporizer();
         quest1.innerHTML = question
         bottons.innerHTML = ""
-        
+
         options.forEach((element, index) => {
 
             let crearBoton = document.createElement("button")
             bottons.appendChild(crearBoton)
-            crearBoton.innerText = element
+            crearBoton.innerText = el-.lkjuytrewq   >AZSfghjklotrASDFGement
             crearBoton.setAttribute("name", index)
             crearBoton.addEventListener('click', (event) => {
                 let selectedOption = event.currentTarget;
                 this.checkAnswer(selectedOption);
             });
         });
-
      }
 
      checkAnswer(selectedOption) {
         let answer = this.questions[this.counter].answer;
         let checkNumber = parseInt(selectedOption.getAttribute("name"));  
+        if (checkNumber !== answer){
+            window.open("http://127.0.0.1:5500/millonario-game-over.html", "_self")
+            
+        }
         if (checkNumber === answer) {
             this.counter++;
             this.loadQuestions();
             this.moneyIncrement();
             clearInterval(this.countdown)
-         
-        } else {
-            window.open("http://127.0.0.1:5500/millonario-game-over.html", "_self")
-        }
+        } 
      }
 
      moneyIncrement() {
@@ -68,15 +68,14 @@ class game {
         if(this.time > 0){
             this.time--;
             timeDisplay.innerHTML = this.time;
-            console.log(this.time);
+        }
+        if(this.time === 0){
+            window.open("http://127.0.0.1:5500/millonario-game-over.html", "_self")
         }
         },1000)
-
     }
-
 }
      
-
 let newGame = new game(questions);
 
 
