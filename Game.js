@@ -40,7 +40,7 @@ class game {
         let answer = this.questions[this.counter].answer
         let checkNumber = parseInt(selectedOption.getAttribute("name"));  
         if (checkNumber !== answer){
-            window.open("millonario-game-over.html", "_self")
+            window.open("millonario-game-over.html")
             
         }
         
@@ -48,7 +48,7 @@ class game {
         if (checkNumber === answer) {
             this.counter++;
             if(this.counter === this.questions.length){
-                 window.open("millonario-you-won%20.html", "_self")
+                 window.open("millonario-you-won%20.html")
                
                 }
             this.loadQuestions();
@@ -80,7 +80,7 @@ class game {
             timeDisplay.innerHTML = this.time;
         }
         if(this.time === 0){
-            window.open("millonario-game-over.html", "_self")
+            window.open("millonario-game-over.html")
         }
         },1000)
     }
