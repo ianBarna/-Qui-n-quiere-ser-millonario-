@@ -46,7 +46,7 @@ class game {
 
         if (checkNumber === answer) {
             this.counter++;
-            if(this.counter === this.questions.length-1){
+            if(this.counter === this.questions.length){
                  window.open("millonario-you-won.html", "_self");
                
                 }
