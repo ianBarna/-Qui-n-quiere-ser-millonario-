@@ -40,7 +40,7 @@ class game {
         let answer = this.questions[this.counter].answer
         let checkNumber = parseInt(selectedOption.getAttribute("name"));  
         if (checkNumber !== answer){
-            window.open("/millonario-game-over.html", "_self");           
+            window.open("millonario-game-over.html", "_self");           
         }
         
 
