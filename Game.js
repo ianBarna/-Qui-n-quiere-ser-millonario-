@@ -53,11 +53,9 @@ class game {
             this.loadQuestions();
             this.moneyIncrement();
             clearInterval(this.countdown)
-
         
         }
        
-
      }
 
      moneyIncrement() {
